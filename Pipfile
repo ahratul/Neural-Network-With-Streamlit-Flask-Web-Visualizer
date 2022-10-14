@@ -4,6 +4,12 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+numpy = "*"
+flask = "*"
+requests = "*"
+matplotlib = "*"
+streamlit = "*"
+tensorflow = "*"
 
 [dev-packages]
 
