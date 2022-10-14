@@ -65,10 +65,6 @@ if not hasattr(st, 'already_started_server'):
 
 # We'll never reach this part of the code the first time this file executes!
 
-# Your normal Streamlit app goes here:
-x = st.slider('Pick a number')
-st.write('You picked:', x)
-
 
 URI = 'http://127.0.0.1:5000'
 st.title('Neural Network Visualizer WebApp')
@@ -81,7 +77,7 @@ if st.button('Get Prediction !'):
     image = response.get('image')
     image = np.reshape(image, (28, 28))
 
-    st.sidebar.image(image, width=150)
+    st.image(image, width=150)
 
     for layer, p in enumerate(preds):
         numbers = np.squeeze(np.array(p))
