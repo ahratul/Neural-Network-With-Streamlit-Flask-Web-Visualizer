@@ -68,7 +68,6 @@ if not hasattr(st, 'already_started_server'):
 
 URI = 'http://127.0.0.1:5000'
 st.title('Neural Network Visualizer WebApp')
-st.sidebar.markdown('## Input Image')
 
 if st.button('Get Prediction !'):
     response = requests.post(URI, data={})
