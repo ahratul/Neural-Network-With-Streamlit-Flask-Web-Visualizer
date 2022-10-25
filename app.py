@@ -19,8 +19,6 @@ if not hasattr(st, 'already_started_server'):
         app.
     ''')
 
-
-
     app = Flask(__name__)
 
     model = tf.keras.models.load_model('model.h5')
@@ -56,7 +54,6 @@ if not hasattr(st, 'already_started_server'):
     if __name__ == '__main__':
         app.run()
 
-
 URI = 'http://127.0.0.1:5000'
 st.title('Neural Network Visualizer WebApp')
 
@@ -68,7 +65,9 @@ if st.button('Get Prediction !'):
     image = np.reshape(image, (28, 28))
 
     st.image(image, width=150)
-
+    st.write('The Layer 1 🥇 and 2 🥈 is the process Layer. Third Layer 🥉 is the output Layer ')
+    st.write(
+        'In the output Layer thr more dark block means the image do not belong on that block, The Bright block means the image belongs to that block')
     for layer, p in enumerate(preds):
         numbers = np.squeeze(np.array(p))
         plt.figure(figsize=(32, 4))
